@@ -4,6 +4,8 @@ import NotFound from "./NotFound";
 import Home from "./Home";
 import { BrowserRouter as Router, Route } from "react-router-dom/cjs/react-router-dom.min";
 import CreateDeck from "./CreateDeck";
+import DeckView from "./DeckView";
+import Study from "./Study";
 
 function Layout() {
   return (
@@ -18,6 +20,12 @@ function Layout() {
           <Route path="/cd">
             <CreateDeck />
           </Route >
+          <Route exact path="/decks/:id">
+            <DeckView />
+          </Route>
+          <Route path="/decks/:id/study">
+            <Study  />
+          </Route>
             <NotFound />
         </Router>
       </div>

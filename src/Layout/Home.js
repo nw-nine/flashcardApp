@@ -16,18 +16,22 @@ function Home() {
     function handleCreateDeck(){
         history.push("/cd")
     }
-
+    
     
     return(
         <>
             <button onClick={handleCreateDeck} className="btn btn-secondary">+ Create Deck</button>
             {decks.map(deck => {
                 
+                function viewDeck() {
+                    history.push(`/decks/${deck.id}`)
+                }
+
                return (
                 <div key={deck.id} className="border">
                     <h2>{deck.name}</h2>
                     <p>{deck.description}</p>
-                    <button className="btn btn-secondary">View</button>
+                    <button onClick={viewDeck} className="btn btn-secondary">View</button>
                     <button className="btn btn-primary">Study</button>
                     <button className="btn btn-danger">❌</button>
                     
