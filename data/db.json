@@ -11,21 +11,6 @@
       "id": 2
     },
     {
-      "name": "sadf",
-      "description": "sdfsdf",
-      "id": 3
-    },
-    {
-      "name": "",
-      "description": "",
-      "id": 4
-    },
-    {
-      "name": "",
-      "description": "",
-      "id": 5
-    },
-    {
       "name": "sdfsdf",
       "description": "dsfsdfsdf",
       "id": 6
@@ -33,17 +18,7 @@
     {
       "name": "sdfsdf",
       "description": "dsfsdfsdf",
-      "id": 7
-    },
-    {
-      "name": "sdfsdf",
-      "description": "dsfsdfsdf",
       "id": 8
-    },
-    {
-      "name": "",
-      "description": "",
-      "id": 9
     },
     {
       "name": "yo yo",
@@ -81,13 +56,6 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
-    },
-    {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
-      "id": 7
     }
   ]
 }

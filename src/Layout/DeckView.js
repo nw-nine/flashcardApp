@@ -4,6 +4,7 @@ import { useParams, useHistory, useRouteMatch } from "react-router-dom";
 import { readDeck } from "../utils/api";
 import { useEffect, useState } from "react";
 import { Route, Router } from "react-router-dom/cjs/react-router-dom.min";
+import { deleteDeck } from "../utils/api";
 
 function DeckView() {
 
@@ -23,9 +24,17 @@ function DeckView() {
                 console.error(error);
             }
         }
-
         fetchData();
     }, [id]);
+
+    
+    function handleDelete() {
+        if(window.confirm("delete this deck?")) {
+            deleteDeck(deck.id)
+        }
+    }
+
+
     return (
         <div>
             <nav aria-label="breadcrumb">
@@ -40,7 +49,7 @@ function DeckView() {
                 <button className="btn btn-secondary">🖋 Edit</button>
                 <button onClick={() => history.push(`${url}/study`)} className="btn btn-primary">🧾 Study</button>
                 <button className="btn btn-primary">+ Add Cards</button>
-                <button className="btn btn-danger">❌</button>
+                <button onClick={handleDelete} className="btn btn-danger">❌</button>
             </div>
             <div>
                 <h3>Cards</h3>

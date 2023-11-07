@@ -42,8 +42,8 @@ function Study() {
                 {deck.cards.length <= 2 ? (
                     <div>
                         <h2>Not Enough cards</h2>
-                        <p>You need atleast 3 cards to study. There are {deck.cards.length - 1} in this deck.</p>
-                        <button>+ Add Cards</button>
+                        <p>You need atleast 3 cards to study. There are {deck.cards.length} in this deck.</p>
+                        <button className="btn btn-primary">+ Add Cards</button>
                     </div>
                 ) : (
                     <div>
