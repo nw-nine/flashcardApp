@@ -1,8 +1,36 @@
 import React, { useState} from "react";
 import { BrowserRouter as Router, Route, Link} from "react-router-dom"
 import DeckForm from "./DeckForm"
+import { createDeck } from "../utils/api";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function CreateDeck() {
+
+    const history = useHistory()
+
+    const initialFormData = {
+        name: "",
+        description: ""
+    }
+
+    const [formData, setFormData] = useState(initialFormData)
+    
+    function handleChange(event) {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        createDeck(formData)
+        history.goBack()
+    }
+
+    function goBack(){
+        history.push("/")
+    } 
 
     return (
         <div>
@@ -16,7 +44,7 @@ function CreateDeck() {
             </div>
             <div>
                 <h1>Create Deck</h1>
-                <DeckForm />
+                <DeckForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} goBack={goBack} />
             </div>
         </div>
     )
