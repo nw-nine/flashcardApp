@@ -15,13 +15,13 @@ function Home() {
     const history = useHistory()
 
     function handleCreateDeck(){
-        history.push("/cd")
+        history.push("/decks/new")
     }
     
     
     return(
         <div>
-            <button onClick={handleCreateDeck} className="btn btn-secondary">+ Create Deck</button>
+            <button onClick={handleCreateDeck} className="btn btn-secondary m-2">+ Create Deck</button>
             {decks.map(deck => {
                 
                 function viewDeck() {
@@ -39,8 +39,11 @@ function Home() {
                 }
 
                return (
-                <div key={deck.id} className="border">
-                    <h2>{deck.name}</h2>
+                <div key={deck.id} className="border p-3">
+                    <div className="d-flex justify-content-between ">
+                        <h2>{deck.name}</h2>
+                        <p>{deck.cards.length} cards</p>
+                    </div>
                     <p>{deck.description}</p>
                     <button onClick={viewDeck} className="btn btn-secondary">View</button>
                     <button onClick={studyDeck} className="btn btn-primary">Study</button>

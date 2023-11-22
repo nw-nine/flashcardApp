@@ -12,16 +12,16 @@ import EditDeck from "./EditDeck";
 
 function Layout() {
   return (
-    <>
+    <React.Fragment>
       <Header />
       <div className="container">
         {/* TODO: Implement the screen starting here */}
-        <Router>
+        
           <Switch>
             <Route exact path="/" >
               <Home />
             </Route>
-            <Route path="/cd">
+            <Route path="/decks/new">
               <CreateDeck />
             </Route >
             <Route exact path="/decks/:id">
@@ -43,9 +43,9 @@ function Layout() {
               <NotFound />
             </Route>
           </Switch>
-        </Router>
+        
       </div>
-    </>
+    </React.Fragment>
   );
 }
 

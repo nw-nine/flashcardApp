@@ -53,9 +53,9 @@ function Study() {
                                 <React.Fragment>
                                     <p>{deck.cards[index].front}</p>
                                     <button onClick={() => setCardSide(!cardSide)} className="btn btn-secondary">Flip</button>
-                                    {index !== deck.cards.length -1 ? (
+                                    {/* {index !== deck.cards.length -1 ? (
                                         <button onClick={() => setIndex(index + 1)} className="btn btn-primary">Next</button>
-                                    ) : <button onClick={restart} className="btn btn-primary">Next</button>}
+                                    ) : <button onClick={restart} className="btn btn-primary">Next</button>} */}
                                 </React.Fragment>
                             </div>
                         ) : (
