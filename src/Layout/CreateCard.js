@@ -39,7 +39,8 @@ function CreateCard() {
     const handleSubmit = async (event) => {
         event.preventDefault()
         createCard(id, formData)
-        history.goBack()
+        // history.goBack()
+        setFormData(initialFormData)
     }
 
     

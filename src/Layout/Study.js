@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import { readDeck } from "../utils/api";
 
-function Study() {
 
+function Study() {
+    
+    const history = useHistory()
     const { id } = useParams()
     const [deck, setDeck] = useState(null);
     console.log(deck);
@@ -13,6 +15,8 @@ function Study() {
     function restart() {
         if(window.confirm("Restart Cards?")) {
             setIndex(0)
+        }else{
+            history.push(`/decks/${id}`)
         }
     }
 
@@ -42,8 +46,8 @@ function Study() {
                 {deck.cards.length <= 2 ? (
                     <div>
                         <h2>Not Enough cards</h2>
-                        <p>You need atleast 3 cards to study. There are {deck.cards.length} in this deck.</p>
-                        <button className="btn btn-primary">+ Add Cards</button>
+                        <p>You need at least 3 cards to study. There are {deck.cards.length} in this deck.</p>
+                        <button onClick={() => history.push(`/decks/${deck.id}/cards/new`)} className="btn btn-primary">+ Add Cards</button>
                     </div>
                 ) : (
                     <div>
