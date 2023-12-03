@@ -46,6 +46,7 @@ function EditDeck() {
         event.preventDefault()
         updateDeck(deck)
         history.push(`/decks/${deck.id}`)
+        window.location.reload(false);
     }
 
     function goBack() {

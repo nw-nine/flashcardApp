@@ -51,6 +51,7 @@ function EditCard() {
         event.preventDefault()
         updateCard(card)
         history.push(`/decks/${deck.id}`)
+        window.location.reload(false);
     }
 
 
