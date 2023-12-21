@@ -25,7 +25,8 @@ function CreateDeck() {
     const handleSubmit = async (event) => {
         event.preventDefault()
         createDeck(formData)
-        history.goBack()
+        history.push("/")
+        window.location.reload(false);
     }
 
     function goBack(){

@@ -16,7 +16,7 @@ function Study() {
         if(window.confirm("Restart Cards?")) {
             setIndex(0)
         }else{
-            history.push(`/decks/${id}`)
+            history.push(`/`)
         }
     }
 
